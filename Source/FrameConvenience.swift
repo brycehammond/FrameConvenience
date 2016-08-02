@@ -1,8 +1,14 @@
+//
+//  FrameConvenience.swift
+//  Flyreel
+//
+//  Created by Bryce Hammond on 8/2/16.
+
 import UIKit
 
-extension UIView {
+public extension UIView {
     
-    var frameOrigin: CGPoint {
+    public var frameOrigin: CGPoint {
         get {
             return self.frame.origin
         }
@@ -14,7 +20,7 @@ extension UIView {
         }
     }
     
-    var frameXOrigin: CGFloat {
+    public var frameXOrigin: CGFloat {
         get {
             return self.frame.origin.x
         }
@@ -25,7 +31,7 @@ extension UIView {
         }
     }
     
-    var frameYOrigin: CGFloat {
+    public var frameYOrigin: CGFloat {
         get {
             return self.frame.origin.y
         }
@@ -36,7 +42,7 @@ extension UIView {
         }
     }
     
-    var frameSize: CGSize {
+    public var frameSize: CGSize {
         get {
             return self.frame.size
         }
@@ -47,7 +53,7 @@ extension UIView {
         }
     }
     
-    var frameHeight: CGFloat {
+    public var frameHeight: CGFloat {
         get {
             return self.frame.size.height
         }
@@ -58,7 +64,7 @@ extension UIView {
         }
     }
     
-    var frameWidth: CGFloat {
+    public var frameWidth: CGFloat {
         get {
             return self.frame.size.width
         }
@@ -69,7 +75,7 @@ extension UIView {
         }
     }
     
-    var rightBorderXValue: CGFloat {
+    public var rightBorderXValue: CGFloat {
         get {
             return CGRectGetMaxX(self.frame)
         }
@@ -80,7 +86,7 @@ extension UIView {
         }
     }
     
-    var bottomBorderYValue: CGFloat {
+    public var bottomBorderYValue: CGFloat {
         get {
             return CGRectGetMaxY(self.frame)
         }
@@ -91,7 +97,7 @@ extension UIView {
         }
     }
     
-    func frameForBorderWithSize(size: CGFloat) -> CGRect {
+    public func frameForBorderWithSize(size: CGFloat) -> CGRect {
         let x = self.frameXOrigin - size
         let y = self.frameYOrigin - size
         let width = self.frameWidth + (size * 2)
@@ -99,7 +105,7 @@ extension UIView {
         return CGRect(x: x, y: y, width: width, height: height)
     }
     
-    func centerVerticallyInSuperviewWithXOrigin(xOrigin: CGFloat) {
+    public func centerVerticallyInSuperviewWithXOrigin(xOrigin: CGFloat) {
         if let superview = self.superview {
             let superviewBounds = superview.bounds
             var viewFrame = self.frame
@@ -109,7 +115,7 @@ extension UIView {
         }
     }
     
-    func centerHorizontallyInSuperviewWithYOrigin(yOrigin: CGFloat) {
+    public func centerHorizontallyInSuperviewWithYOrigin(yOrigin: CGFloat) {
         if let superview = self.superview {
             let superviewBounds = superview.bounds
             var viewFrame = self.frame
@@ -119,11 +125,11 @@ extension UIView {
         }
     }
     
-    func centerInSuperview() {
+    public func centerInSuperview() {
         self.centerInSuperviewWithOffset(CGPointZero)
     }
     
-    func centerInSuperviewWithOffset(offset: CGPoint) {
+    public func centerInSuperviewWithOffset(offset: CGPoint) {
         if let superview = self.superview {
             let superviewBounds = superview.bounds
             var viewFrame = self.frame
